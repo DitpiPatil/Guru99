@@ -15,6 +15,8 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.DataProvider;
 
+
+
 public class ExcelUtils {
 
 	public static List<String[]> readExcelData(String filepath, String SheetName) throws IOException{
@@ -48,7 +50,26 @@ public class ExcelUtils {
 	
 	
 	
-	
+	@DataProvider(name="exceldata")
+	public Object[][] excelDataprovider() throws IOException{
+		String filepath="C:\\Users\\36814\\eclipse-workspace\\DRSProject\\src\\main\\java\\DRSTestData\\DeficiencyData.xlsx";
+		String sheetname="Sheet1";
+		
+		List<String[]> datalist= ExcelUtils.readExcelData(filepath, sheetname);
+		
+		Object[][] dataArray= new Object[datalist.size()][3];
+		
+		for(int i=0;i<datalist.size();i++) {
+			dataArray[i]=datalist.get(i);
+		}
+		
+		/*
+		 * for(Map.Entry<String, String> entry: data.entrySet()) {
+		 * dataArray[index][0]=entry.getKey(); dataArray[index][1]=entry.getValue();
+		 * index++; }
+		 */
+		return dataArray;
+	}
 	
 	
 }
