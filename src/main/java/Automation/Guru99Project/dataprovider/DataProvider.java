@@ -24,7 +24,7 @@ NewExcelLibrary obj = new NewExcelLibrary();
 		return data;
 	}
 	
-	
+	/*
 	@org.testng.annotations.DataProvider(name = "CreateIssue")
 	public Object[][] getProduct() {
 		// Totals rows count
@@ -64,5 +64,5 @@ NewExcelLibrary obj = new NewExcelLibrary();
 			data[i][0]=hashMap;
 		}
 		return data;
-	}
+	}   */
 }
